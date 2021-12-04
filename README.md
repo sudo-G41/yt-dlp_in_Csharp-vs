@@ -14,6 +14,6 @@ Windows대상으로만 만든거여서 windows만 작동합니다.
 주소 입력하면 섬네일이 나오니 맞는지 확인해 보세요.
 
 ## 실행화면
-<img src="/Readme/사용장면.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
-<img src="/Readme/다운로드중.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+<img src="/Readme/사용장면.png" width="400px" height="250px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+<img src="/Readme/다운로드중.png" width="400px" height="250px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
 Download누르면 저장하기 시작합니다.
