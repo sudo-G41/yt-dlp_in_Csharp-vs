@@ -46,16 +46,31 @@ namespace youtube
             btn2.Name = "btn2";
             btn2.Text = "File";
             btn2.Location = new System.Drawing.Point(100, 70);
-            btn1.Size = new System.Drawing.Size(200,30);
+            btn2.Size = new System.Drawing.Size(200,30);
+            
+            thumbnailBtn = new Button();
+            thumbnailBtn.Name = "thumbnailBtn";
+            thumbnailBtn.Text = "File";
+            thumbnailBtn.Location = new System.Drawing.Point(200, 70);
+            thumbnailBtn.Size = new System.Drawing.Size(200,30);
+            
+            thumbnailPicbox = new PictureBox();
+            thumbnailPicbox.Name = "thumbnailPicbox";
+            thumbnailPicbox.Location = new System.Drawing.Point(200, 100);
+            thumbnailPicbox.Size = new System.Drawing.Size(486,360);
 
             this.Controls.Add(btn1);
             this.Controls.Add(btn2);
+            this.Controls.Add(thumbnailBtn);
+            this.Controls.Add(thumbnailPicbox);
 
             this.MouseDown += new MouseEventHandler(MousePointXY);
         }
 
         private Button btn1;
         private Button btn2;
+        private Button thumbnailBtn;
+        private PictureBox thumbnailPicbox;
         #endregion
     }
 }

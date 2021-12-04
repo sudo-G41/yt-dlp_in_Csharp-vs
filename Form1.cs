@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Dialogs;
 
+using System.Net;
+using System.IO;
+
 namespace youtube
 {
     public partial class Form1 : Form
@@ -20,6 +23,7 @@ namespace youtube
 
             btn1.Click += btn1Click;
             btn2.Click += btn2Click;
+            thumbnailBtn.Click += thumbnailBtnClick;
         }
 
         private void btn1Click(object sender, EventArgs e){
@@ -41,6 +45,20 @@ namespace youtube
                 String option = "-o "+d.FileName+"\"\\download\\%(title)s.%(ext)s\" https://www.youtube.com/watch?v=1vryJp_ylVQ -v";
                 var sample = Process.Start(Application.StartupPath+"/yt-dlp.exe",option);
                 Console.WriteLine(option);
+            }
+        }
+        private void thumbnailBtnClick(object sender, EventArgs e){
+            String URL = "https://img.youtube.com/vi/1bNNQBDeCtY/0.jpg";
+            this.thumbnailPicbox.Image = getImageURL(URL);
+        }
+        private Image getImageURL(String url){
+            using(WebClient client = new WebClient()){
+                byte[] img;
+                img = client.DownloadData(url);
+                using(MemoryStream mes = new MemoryStream(img)){
+                    Image i = Image.FromStream(mes);
+                    return i;
+                }
             }
         }
 
