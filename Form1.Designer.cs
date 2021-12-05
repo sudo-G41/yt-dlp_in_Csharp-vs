@@ -35,18 +35,6 @@ namespace youtube
             this.ClientSize = new System.Drawing.Size(800, 450);//창 사이즈 조절
             this.Text = "Youtube Downloader";
             this.FormBorderStyle=FormBorderStyle.FixedSingle;//창 사이즈 고정
-
-            // btn1 = new Button();
-            // btn1.Name = "btn1";
-            // btn1.Text = "???";
-            // btn1.Location = new System.Drawing.Point(100, 20);
-            // btn1.Size = new System.Drawing.Size(200,30);
-            
-            // btn2 = new Button();
-            // btn2.Name = "btn2";
-            // btn2.Text = "File";
-            // btn2.Location = new System.Drawing.Point(100, 70);
-            // btn2.Size = new System.Drawing.Size(200,30);
             
             downloadpathLabel=new Label();
             downloadpathLabel.Text="경로";
@@ -56,6 +44,7 @@ namespace youtube
             downloadpathTextBox=new TextBox();
             downloadpathTextBox.Location=new System.Drawing.Point(85,20);
             downloadpathTextBox.Size=new System.Drawing.Size(620-85,30);
+            downloadpathTextBox.ReadOnly=true;
 
             downloadpathBtn=new Button();
             downloadpathBtn.Text="찾기";
@@ -80,8 +69,13 @@ namespace youtube
             thumbnailPictureBox.Location=new System.Drawing.Point(45,125);
             thumbnailPictureBox.Size=new System.Drawing.Size(486,360);
 
-            // this.Controls.Add(btn1);
-            // this.Controls.Add(btn2);
+            donwloading = new Label();
+            donwloading.Visible=false;
+            donwloading.Location=new System.Drawing.Point(45,85);
+            donwloading.Size=new System.Drawing.Size(485,360);
+            donwloading.AutoSize=false;
+            donwloading.TextAlign=System.Drawing.ContentAlignment.MiddleCenter;
+            donwloading.Text="Downloading";
 
             this.Controls.Add(downloadpathLabel);
             this.Controls.Add(downloadpathTextBox);
@@ -90,12 +84,10 @@ namespace youtube
             this.Controls.Add(urlTextBox);
             this.Controls.Add(downloadBtn);
             this.Controls.Add(thumbnailPictureBox);
+            this.Controls.Add(donwloading);
 
             this.MouseDown += new MouseEventHandler(MousePointXY);
         }
-
-        // private Button btn1;
-        // private Button btn2;
         private Label downloadpathLabel;
         private TextBox downloadpathTextBox;
         private Button downloadpathBtn;
@@ -103,6 +95,7 @@ namespace youtube
         private TextBox urlTextBox;
         private Button downloadBtn;
         private PictureBox thumbnailPictureBox;
+        private Label donwloading;
         #endregion
     }
 }
